@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  extend ActiveHash::Associations::ActiveRecordExtentions
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :scheduled
 
