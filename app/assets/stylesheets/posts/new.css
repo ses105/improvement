@@ -1,0 +1,25 @@
+.post-field {
+  width: 100%;
+}
+
+#new-post-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.post-submit {
+  width: 200px;
+}
+
+.category-select,
+.scheduled-select {
+  height: 30px;
+  font-size: 90%;
+}
+
+.image {
+  width: 50%;
+  height: 50px;
+  font-size: small;
+}
