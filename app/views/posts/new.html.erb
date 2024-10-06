@@ -11,6 +11,10 @@
       <%= f.text_area :question, class:"question", rows:10, placeholder: "質問事項を記述してください"%>
       </div>
       <div class="field">
+      <span>※資料がある場合にはファイルを添付してください。</span>
+      <%= f.file_field :image, class:"image" %>
+      </div>
+      <div class="field">
       <%= f.label :category_id, "カテゴリー" %>
       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"})%>
       </div>
@@ -18,7 +22,7 @@
       <%= f.label :scheduled_id, "回答希望日" %>
       <%= f.collection_select(:scheduled_id, Scheduled.all, :id, :name, {}, {class:"scheduled-select"})%>
       </div>
-      <div class="field">
+      <div class="field", id="new-post-button">
       <%= f.submit "投稿する", class:"post-submit" %>
       </div>
     </div>
