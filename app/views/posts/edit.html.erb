@@ -1,0 +1,32 @@
+<div class="contents row">
+  <div class="container">
+  <%= form_with model:@post, local:true do |f| %>
+    <div class="post-field">
+      <div class="field">
+      <%= f.label :title, "タイトル"%>
+      <%= f.text_field :title, class:"title" %>
+      </div>
+      <div class="field">
+      <%= f.label :question, "質問内容" %>
+      <%= f.text_area :question, class:"question", rows:10%>
+      </div>
+      <div class="field">
+      <span>※資料がある場合にはファイルを添付してください。</span>
+      <%= f.file_field :image, class:"image" %>
+      </div>
+      <div class="field">
+      <%= f.label :category_id, "カテゴリー" %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"})%>
+      </div>
+      <div class="field">
+      <%= f.label :scheduled_id, "回答希望日" %>
+      <%= f.collection_select(:scheduled_id, Scheduled.all, :id, :name, {}, {class:"scheduled-select"})%>
+      </div>
+      <div class="field", id="new-post-button">
+      <%= f.submit "編集する", class:"post-submit" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+

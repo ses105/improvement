@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <div class="show-title">
+      <%= @post.title %>
+    </div>
+    <div class="show-question">
+      <%= @post.question%>
+    </div>
+    
+    <div class="show-image">
+      <%= image_tag @post.image.variant(resize: '200x200') if @post.image.attached? %>
+    </div>
+  </div>
+</div>
